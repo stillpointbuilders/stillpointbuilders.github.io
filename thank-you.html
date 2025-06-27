@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Stillpoint Builders</title>
+    <meta name="description" content="Thank you for contacting Stillpoint Builders. We'll be in touch within 24 hours to discuss your deck project.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-sage: #3A4F42;
+            --soft-cream: #F5F2ED;
+            --warm-stone: #8B7D6B;
+            --quiet-bronze: #A67C52;
+            --white: #FFFFFF;
+            --darker-sage: #2F3F35;
+            --gold: #FFD700;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--warm-stone);
+            background-color: var(--soft-cream);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--soft-cream);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+        }
+
+        .thank-you-card {
+            background-color: var(--white);
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #28A745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 40px;
+            color: white;
+        }
+
+        .thank-you-card h1 {
+            font-size: 42px;
+            color: var(--deep-sage);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .thank-you-card .subtitle {
+            font-size: 24px;
+            color: var(--warm-stone);
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .thank-you-card p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .next-steps {
+            background-color: var(--soft-cream);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            font-size: 20px;
+            color: var(--deep-sage);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .next-steps li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+            font-size: 16px;
+        }
+
+        .next-steps li::before {
+            content: "✓";
+            color: var(--quiet-bronze);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-info {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(58, 79, 66, 0.05);
+            border-radius: 8px;
+        }
+
+        .contact-info h4 {
+            color: var(--deep-sage);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .contact-item span {
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--deep-sage);
+            color: var(--soft-cream);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--darker-sage);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--deep-sage);
+            padding: 14px 30px;
+            border: 2px solid var(--deep-sage);
+            border-radius: 6px;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--deep-sage);
+            color: var(--soft-cream);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep-sage);
+            color: var(--soft-cream);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: rgba(139, 125, 107, 0.8);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .thank-you-card {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+
+            .thank-you-card h1 {
+                font-size: 32px;
+            }
+
+            .thank-you-card .subtitle {
+                font-size: 20px;
+            }
+
+            .main-content {
+                padding: 40px 0;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="https://page1.genspark.site/v1/base64_upload/bc9332dfcd4991115efef0375be1a043" alt="Stillpoint Builders" class="logo">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="thank-you-card">
+                <div class="success-icon">✓</div>
+                
+                <h1>Thank You!</h1>
+                <p class="subtitle">We've received your project details and will be in touch soon.</p>
+                
+                <p>Thank you for choosing Stillpoint Builders for your deck project. Your request for a free estimate has been received, and we're excited to help you create an outdoor space that truly matters.</p>
+
+                <div class="next-steps">
+                    <h3>What Happens Next:</h3>
+                    <ul>
+                        <li>We'll contact you within 24 hours to discuss your project</li>
+                        <li>Schedule your free on-site consultation at your convenience</li>
+                        <li>Provide a detailed project estimate with transparent pricing</li>
+                        <li>Answer all your questions about our gold standard process</li>
+                        <li>Begin creating your perfect outdoor sanctuary</li>
+                    </ul>
+                </div>
+
+                <div class="contact-info">
+                    <h4>Need to reach us immediately?</h4>
+                    <div class="contact-item">
+                        <span>📞</span> (631) 365-9484
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span> david@stillpointbuilders.com
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="/" class="btn-primary">Return to Homepage</a>
+                    <a href="tel:6313659484" class="btn-secondary">Call Now</a>
+                </div>
+
+                <p style="margin-top: 30px; font-size: 16px; font-style: italic; color: var(--deep-sage);">
+                    "Creating space for what matters - one satisfied Durham neighbor at a time."
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Stillpoint Builders LLC. All rights reserved. | Licensed & Insured | Serving Durham, NC</p>
+        </div>
+    </footer>
+
+    <!-- HighLevel Tracking (if needed) -->
+    <script>
+        // HighLevel tracking code can be added here when you get your tracking pixel
+        console.log('Thank you page loaded successfully');
+        
+        // Optional: Send event to HighLevel when page loads
+        // This can be configured with your HighLevel tracking pixel
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDqmg%2FEBshIw1rrpPDohElrUgnmaF1a9H8TXO29rD0X1YfYK1U%2Bw4cJQK42xFmazruex32UNP%2FV8vMf6j372KVt8C6WmmD0z6wsz%2FrbFW3iupYpq1y396wqlWGVFmI8YAqSYgRLRBMuNxXz4IboX%2BPhfYfIViFbKlp3cHlc7kwKqCw2rr3ajMowqpNuCIbL%2F%2BfPY2D7j0%2B0k%2Fge7euI1QIxJrHIHSAstIwiapay4MFUcF3S5A4UuI8zVYX%2BV9%2Fpv82fJoi733kmgbBcUPIt4eLyNfpSRvndz70o5JT96e81bL1goSenVnOjPRwvYr8QDedVnfI04IkEcpH2IRyMZHewIoouqXfPriFbUHywGlaHh%2F2%2Br%2FMAcl34ABM4D0IeMk%2Byg1FOh2IqtlE2sya5LfSxXhKSemjttocPVJGutF9%2FwCwhsLYRPZpF5OCef9BfnQ8AgggowzFdExydK1oKxXVZH%2BiWknJ1ipOH%2FhZ8MH16LgYhhoDBGkS4sd0dl%2FumAHTw%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDqmg/EBshIw1rrpPDohElrUgnmaF1a9H8TXO29rD0X1YfYK1U+w4cJQK42xFmazruex32UNP/V8vMf6j372KVt8C6WmmD0z6wsz/rbFW3iupYpq1y396wqlWGVFmI8YAqSYgRLRBMuNxXz4IboX+PhfYfIViFbKlp3cHlc7kwKqCw2rr3ajMowqpNuCIbL/+fPY2D7j0+0k/ge7euI1QIxJrHIHSAstIwiapay4MFUcF3S5A4UuI8zVYX+V9/pv82fJoi733kmgbBcUPIt4eLyNfpSRvndz70o5JT96e81bL1goSenVnOjPRwvYr8QDedVnfI04IkEcpH2IRyMZHewIoouqXfPriFbUHywGlaHh/2+r/MAcl34ABM4D0IeMk+yg1FOh2IqtlE2sya5LfSxXhKSemjttocPVJGutF9/wCwhsLYRPZpF5OCef9BfnQ8AgggowzFdExydK1oKxXVZH+iWknJ1ipOH/hZ8MH16LgYhhoDBGkS4sd0dl/umAHTw==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
