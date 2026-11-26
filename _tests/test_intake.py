@@ -1,9 +1,8 @@
 """Public intake routing contract. Run with python3 -m unittest discover -s _tests."""
 
+import unittest
 from html.parser import HTMLParser
 from pathlib import Path
-import unittest
-
 
 ROOT = Path(__file__).resolve().parents[1]
 INTAKE = "https://stillpointbuilders.com/#estimate"
