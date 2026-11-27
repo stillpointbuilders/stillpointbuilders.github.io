@@ -1,0 +1,20 @@
+name: Public intake contract
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  intake:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Test the published pages without network access
+        run: |
+          git archive HEAD -- index.html thank-you.html _tests |
+            docker run --rm -i --network none --read-only --user 65534:65534 \
+              --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:size=8m -w /tmp \
+              python@sha256:f0fa218d5b06f9b9235024fa061cde2cb141f726de52134471053d2d9b5324a3 \
+              sh -ec 'tar --no-same-owner -xf - && python -B -m unittest discover -s _tests -v'
+        shell: bash
